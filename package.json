@@ -1,0 +1,15 @@
+{
+  "name": "montyhall",
+  "version": "1.0.0",
+  "description": "A sanity-check simulation of the Monty Hall Problem.",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "wordwrap": "0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "cli": "node cli"
+  },
+  "author": "Jerry Orr <orr94@yahoo.com>",
+  "license": "ISC"
+}
