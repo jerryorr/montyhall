@@ -1,15 +1,18 @@
 var $ = require('jquery')
   , sim = require('../lib/simulation')
   , _ = require('lodash')
+  , fastClick = require('fastclick');
 
 $(document).ready(function () {
+  fastClick(document.body)
+
   $('button.stick').click(_.partial(run, false))
   $('button.switch').click(_.partial(run, true))
   $('button.again').click(again)
 })
 
 function run (switched) {
-  $('.buttons').hide()
+  $('.choice-buttons').hide()
 
   var results = sim(switched)
 
@@ -26,7 +29,7 @@ function run (switched) {
   }
 
   $('.results').show()
-  $('.again').show()
+  $('.result-buttons').show()
 }
 
 function pct (n) {
@@ -35,6 +38,6 @@ function pct (n) {
 
 function again () {
   $('.results').hide()
-  $('.again').hide()
-  $('.buttons').show()
+  $('.result-buttons').hide()
+  $('.choice-buttons').show()
 }

@@ -1,63 +1,76 @@
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Monty Hall Problem simulator</title>
-    <link rel="stylesheet" type="text/css" href="client.css"/>
+    <link rel="stylesheet" type="text/css" href="bundle.css"/>
   </head>
   <body>
-    <section class="intro">
-      <header><h1>Monty Hall Problem</h1></header>
-      <blockquote>
+    <div class="container">
+      <section class="intro">
+        <header><h1>Monty Hall Problem</h1></header>
+        <blockquote>
+          <p>
+            Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car;
+            behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors,
+            opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?"
+            Is it to your advantage to switch your choice?
+          </p>
+          <footer>
+            <cite>vos Savant, Marilyn (9 September 1990a). <a href="http://marilynvossavant.com/game-show-problem/">"Ask Marilyn"</a>. Parade Magazine: 16.</cite>
+          </footer>
+        </blockquote>
+        <p>This is the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a>. TODO expand on this</p>
+      </section>
+
+      <section class="simulator">
+        <header><h1>The Simulator</h1></header>
+
+        <noscript>JavaScript must be enabled to run the simulator.</noscript>
+
+        <p>As an alternative to mathematical proofs, we can simply play the game and see how it turns out.</p>
+
         <p>
-          Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car;
-          behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors,
-          opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?"
-          Is it to your advantage to switch your choice?
+          Choose either the <em>Stick with original choice</em> or the <em>Switch to the other door</em> strategy.
+          The game will then be simulated 1,000 times; each time, the car will be put behind a random door, the
+          contestant will pick a random door, and then the contestant will make the stick or switch decision you chose.
         </p>
-        <footer>
-          <cite>vos Savant, Marilyn (9 September 1990a). <a href="http://marilynvossavant.com/game-show-problem/">"Ask Marilyn"</a>. Parade Magazine: 16.</cite>
-        </footer>
-      </blockquote>
-      <p>This is the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a>. TODO expand on this</p>
-    </section>
 
-    <section class="simulator">
-      <header><h1>The Simulator</h1></header>
+        <div class="text-center choice-buttons">
+          <button class="btn btn-default stick">Stick with original choice</button>
+          <button class="btn btn-default switch">Switch to the other door</button>
+        </div>
 
-      <noscript>JavaScript must be enabled to run the simulator.</noscript>
+        <table class="table table-bordered results" style="display:none">
+          <caption></caption>
+          <tbody>
+            <tr class="car">
+              <td>Won a car</td>
+              <td class="times"></td>
+              <td class="percent"></td>
+            </tr>
+            <tr class="goat">
+              <td>Won a goat</td>
+              <td class="times"></td>
+              <td class="percent"></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <p>As an alternative to mathematical proofs, we can simply play the game and see how it turns out.</p>
-
-      <p>
-        Choose either the <em>Stick with original choice</em> or the <em>Switch to the other door</em> strategy.
-        The game will then be simulated 1,000 times; each time, the car will be put behind a random door, the
-        contestant will pick a random door, and then the contestant will make the stick or switch decision you chose.
-      </p>
-
-      <div class="buttons">
-        <button class="stick">Stick with original choice</button>
-        <button class="switch">Switch to the other door</button>
+        <div class="text-center result-buttons" style="display:none">
+          <button class="btn btn-default again">Simulate again</button>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Totally not copywrited by <a href="http://jerryorr.com" rel="author">Jerry Orr</a></p>
       </div>
-
-      <table class="results" style="display:none">
-        <caption></caption>
-        <tbody>
-          <tr class="car">
-            <td>Won a car</td>
-            <td class="times"></td>
-            <td class="percent"></td>
-          </tr>
-          <tr class="goat">
-            <td>Won a goat</td>
-            <td class="times"></td>
-            <td class="percent"></td>
-          </tr>
-        </tbody>
-      <table>
-
-      <button class="again" style="display:none">Simulate again</button>
-    </section>
-
-    <footer>Totally not copywrited by <a href="http://jerryorr.com" rel="author">Jerry Orr</a></footer>
+    </footer>
   </body>
-  <script src="client-bundle.js"></script>
+  <script src="bundle.js"></script>
 </html>
