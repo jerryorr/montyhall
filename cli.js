@@ -9,7 +9,11 @@ var rl = readline.createInterface({
   output: process.stdout
 })
 
-out(messages.problem, '\n')
+out("Suppose you're on a game show, and you're given the choice of three doors:\n\n\
+Behind one door is a car; behind the others, goats. \
+You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. \
+He then says to you, \"Do you want to pick door No. 2?\"\n\n\
+Is it to your advantage to switch your choice? Your choice will be simulated 1,000 times.", '\n')
 
 // TODO send question through wrap
 rl.question('Will you (k)eep your original choice, or (s)witch to the remaining door? ', handleAnswer)
