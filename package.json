@@ -16,6 +16,7 @@
   },
   "scripts": {
     "cli": "node cli",
+    "build": "npm run build-js & npm run build-css",
     "build-js": "browserify client/client.js | uglifyjs > client/bundle.js",
     "build-watch": "watchify --debug client/client.js -o client/bundle.js",
     "build-css": "cat node_modules/bootstrap/dist/css/bootstrap.min.css node_modules/bootstrap/dist/css/bootstrap-theme.min.css client/client.css > client/bundle.css"
